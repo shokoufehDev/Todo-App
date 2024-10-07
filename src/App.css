@@ -1,0 +1,161 @@
+/* Global styles */
+:root {
+  --primary-blue: #3498db; /* Main blue */
+  --light-blue: #74b9ff; /* Light blue */
+  --dark-blue: #2c3e50; /* Dark blue */
+  --background-light: #f1f1f1; /* Light background */
+  --background-dark: #1e272e; /* Dark background */
+  --text-light: #f1f1f1;
+  --text-dark: #2d3436;
+  --task-bg-light: #ffffff; /* Light task background */
+  --task-bg-dark: #2d3436; /* Dark task background */
+  --completed-light: #d3ffd3; /* Light completed task */
+  --completed-dark: #3a5442; /* Dark completed task */
+  --shadow: rgba(0, 0, 0, 0.1); /* Box shadow */
+}
+
+body.dark-mode {
+  --primary-blue: #74b9ff;
+  --light-blue: #3498db;
+  --background-light: var(--background-dark);
+  --text-dark: var(--text-light);
+  --task-bg-light: var(--task-bg-dark);
+  --completed-light: var(--completed-dark);
+}
+
+/* App container */
+.App {
+  text-align: center;
+  padding: 30px;
+  background-color: var(--background-light);
+  color: var(--text-dark);
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: var(--primary-blue);
+}
+
+/* Dark mode toggle button */
+.dark-mode-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: var(--primary-blue);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dark-mode-toggle:hover {
+  background-color: var(--light-blue);
+}
+
+/* Input container */
+.input-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+input {
+  padding: 12px;
+  font-size: 18px;
+  border: 2px solid var(--primary-blue);
+  border-radius: 10px;
+  width: 280px;
+  margin-right: 10px;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  border-color: var(--light-blue);
+  outline: none;
+}
+
+button {
+  padding: 12px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--primary-blue);
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--light-blue);
+}
+
+/* Task list */
+.task-list {
+  list-style-type: none;
+  padding: 0;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+li {
+  padding: 15px;
+  font-size: 18px;
+  background-color: var(--task-bg-light);
+  margin-bottom: 10px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 4px 8px var(--shadow);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+li.completed {
+  text-decoration: line-through;
+  background-color: var(--completed-light);
+}
+
+/* Task action buttons (Done/Delete) */
+li button {
+  margin-left: 10px;
+  padding: 8px 12px;
+  background-color: red;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+li button:hover {
+  background-color: darkred;
+}
+
+li .done-button {
+  background-color: green;
+}
+
+li .done-button:hover {
+  background-color: darkgreen;
+}
+
+/* Dark mode styles */
+body.dark-mode .App {
+  background-color: var(--background-dark);
+  color: var(--text-light);
+}
+
+body.dark-mode li {
+  background-color: var(--task-bg-dark);
+}
+
+body.dark-mode li.completed {
+  background-color: var(--completed-dark);
+}
+
+body.dark-mode button {
+  background-color: var(--light-blue);
+}
